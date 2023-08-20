@@ -1,3 +1,4 @@
+
 def falling(n, k):
     """Compute the falling factorial of n to depth k.
 
@@ -10,7 +11,12 @@ def falling(n, k):
     >>> falling(4, 0)
     1
     """
-    "*** YOUR CODE HERE ***"
+    fac = 1
+    while k > 0:
+        fac = n * fac
+        k -= 1
+        n -= 1
+    return fac
 
 
 
@@ -28,6 +34,13 @@ def sum_digits(y):
     6
     """
     "*** YOUR CODE HERE ***"
+    sum = 0
+    while y > 0:
+        last_digit = y % 10
+        sum += last_digit
+        y //= 10
+    return sum
+
 
 
 
@@ -47,5 +60,17 @@ def double_eights(n):
     False
     """
     "*** YOUR CODE HERE ***"
-
+    count = 0
+    while n > 0:
+        digit = n % 10
+        if(digit == 8):
+            count += 1
+        else:
+            count = 0
+        if(count == 2):
+            return True
+        n //= 10
+    
+    return False
+        
 
